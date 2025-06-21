@@ -3,10 +3,8 @@ package com.alibaba.cloud.ai.example.chat.multi.controller;
 
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.DefaultChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.model.ChatModel;
-import org.springframework.ai.deepseek.DeepSeekChatModel;
 import org.springframework.ai.deepseek.DeepSeekChatOptions;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -72,13 +70,13 @@ public class MultiChatClientController {
      * */
     @GetMapping("/single/chat")
     public String singleChat() {
-        StringBuilder s = new StringBuilder();
-        s.append("defaultChatClient:");
-        s.append(defaultChatClient.prompt(DEFAULT_PROMPT).call().content());
-        s.append(System.lineSeparator());
-        s.append("assistantChatClient:");
-        s.append(assistantChatClient.prompt(DEFAULT_PROMPT).call().content());
-        return s.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("defaultChatClient:");
+        sb.append(defaultChatClient.prompt(DEFAULT_PROMPT).call().content());
+        sb.append(System.lineSeparator());
+        sb.append("assistantChatClient:");
+        sb.append(assistantChatClient.prompt(DEFAULT_PROMPT).call().content());
+        return sb.toString();
     }
 
     /**
@@ -86,12 +84,12 @@ public class MultiChatClientController {
      * */
     @GetMapping("/multi/chat")
     public String multiChat() {
-        StringBuilder s = new StringBuilder();
-        s.append("defaultChatClient:");
-        s.append(defaultChatClient.prompt(DEFAULT_PROMPT).call().content());
-        s.append(System.lineSeparator());
-        s.append("DeepSeekChatClient:");
-        s.append(deepseekChatClient.prompt(DEFAULT_PROMPT).call().content());
-        return s.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("defaultChatClient:");
+        sb.append(defaultChatClient.prompt(DEFAULT_PROMPT).call().content());
+        sb.append(System.lineSeparator());
+        sb.append("DeepSeekChatClient:");
+        sb.append(deepseekChatClient.prompt(DEFAULT_PROMPT).call().content());
+        return sb.toString();
     }
 }
