@@ -44,6 +44,7 @@
 		<!--<module>moonshot-chat</module>-->
 		<module>deepseek-chat</module>
 		<module>dashscope-chat</module>
+		<module>multi-chat</module>
 	</modules>
 
 	<build>

@@ -1,0 +1,21 @@
+server:
+  port: 10009
+
+spring:
+  application:
+    name: spring-ai-alibaba-multiple-chat-models-example
+
+  ai:
+    deepseek:
+      api-key: ${AI_DEEPSEEK_API_KEY}
+      base-url: "https://api.deepseek.com"
+      chat:
+        options:
+          model: deepseek-chat
+      embedding:
+        enabled: false
+    dashscope:
+      api-key: ${AI_DASHSCOPE_API_KEY}
+    chat:
+      client:
+        enabled: false
